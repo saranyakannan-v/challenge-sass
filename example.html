@@ -9,18 +9,19 @@
 
     <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
 
-    <link href="example.css" type="text/css" rel="stylesheet" />
+    <link href="sasschallenge.css" type="text/css" rel="stylesheet" />
 </head>
 
-<body id="parent">
-    <div id="child">
+<body id="root">
+    <div id="root-child">
         <header>
-            <h1>Learning to work with SASS</h1>
-            <!--adding links to the page-->
-            <section class="links">
-                <a href="#parent" class="blue">blue</a>
-                <a href="#child" class="red">red</a>
-            </section>
+            <h1>Learning to work with SASS
+                <section class="links">
+                    <a href="#root" class="blue">blue</a>
+                    <a href="#root-child" class="red">red</a>
+                </section>
+            </h1>
+
         </header>
 
         <article>
@@ -45,20 +46,20 @@
 
                 <section>
                     <code class="before">
-                $font-stack: Helvetica, sans-serif;<br/>
-                $primary-color: #333;<br/>
-                <br/>
-                body {
-                font: 100% $font-stack;<br/>
-                color: $primary-color;<br/>
-                }
-            </code>
+                        $font-stack: Helvetica, sans-serif;<br/>
+                        $primary-color: #333;<br/>
+                        <br/>
+                        body {
+                        font: 100% $font-stack;<br/>
+                        color: $primary-color;<br/>
+                        }
+                    </code>
                     <code class="after">
-                body {<br/>
-                font: 100% Helvetica, sans-serif;<br/>
-                color: #333;<br/>
-                }
-            </code>
+                        body {<br/>
+                        font: 100% Helvetica, sans-serif;<br/>
+                        color: #333;<br/>
+                        }
+                    </code>
                 </section>
 
                 <p>When the Sass is processed, it takes the variables we define for the $font-stack and $primary-color and outputs normal CSS with our variable values placed in the CSS. This can be extremely powerful when working with brand colors and keeping
@@ -77,38 +78,38 @@
 
                 <section>
                     <code class="before">
-                nav {<br/>
-                ul {<br/>
-                margin: 0;<br/>
-                padding: 0;<br/>
-                list-style: none;<br/>
-                }<br/>
-                <br/>
-                li { display: inline-block; }<br/>
-                <br/>
-                a {<br/>
-                display: block;<br/>
-                padding: 6px 12px;<br/>
-                text-decoration: none;<br/>
-                }<br/>
-                }
-            </code>
+                        nav {<br/>
+                        ul {<br/>
+                        margin: 0;<br/>
+                        padding: 0;<br/>
+                        list-style: none;<br/>
+                        }<br/>
+                        <br/>
+                        li { display: inline-block; }<br/>
+                        <br/>
+                        a {<br/>
+                        display: block;<br/>
+                        padding: 6px 12px;<br/>
+                        text-decoration: none;<br/>
+                        }<br/>
+                        }
+                    </code>
                     <code class="after">
-                nav ul {<br/>
-                margin: 0;<br/>
-                padding: 0;<br/>
-                list-style: none;<br/>
-                }<br/>
-                nav li {<br/>
-                display: inline-block;<br/>
-                }<br/>
-                nav a {<br/>
-                display: block;<br/>
-                padding: 6px 12px;<br/>
-                text-decoration: none;<br/>
-                }
+                        nav ul {<br/>
+                        margin: 0;<br/>
+                        padding: 0;<br/>
+                        list-style: none;<br/>
+                        }<br/>
+                        nav li {<br/>
+                        display: inline-block;<br/>
+                        }<br/>
+                        nav a {<br/>
+                        display: block;<br/>
+                        padding: 6px 12px;<br/>
+                        text-decoration: none;<br/>
+                        }
 
-            </code>
+                    </code>
                 </section>
 
                 <p>You'll notice that the ul, li, and a selectors are nested inside the nav selector. This is a great way to organize your CSS and make it more readable.</p>
@@ -129,36 +130,36 @@
 
                 <section>
                     <code class="before">
-                // _reset.scss<br/>
-                html,<br/>
-                body,<br/>
-                ul,<br/>
-                ol {<br/>
-                margin: 0;<br/>
-                padding: 0;<br/>
-                }<br/>
-                <br/>
-                // base.scss<br/>
-                @import 'reset';<br/>
-                body {<br/>
-                font: 100% Helvetica, sans-serif;<br/>
-                background-color: #efefef;<br/>
-                }
+                        // _reset.scss<br/>
+                        html,<br/>
+                        body,<br/>
+                        ul,<br/>
+                        ol {<br/>
+                        margin: 0;<br/>
+                        padding: 0;<br/>
+                        }<br/>
+                        <br/>
+                        // base.scss<br/>
+                        @import 'reset';<br/>
+                        body {<br/>
+                        font: 100% Helvetica, sans-serif;<br/>
+                        background-color: #efefef;<br/>
+                        }
 
-            </code>
+                    </code>
                     <code class="after">
-                html,<br/>
-                body,<br/>
-                ul,<br/>
-                ol {<br/>
-                margin: 0;<br/>
-                padding: 0;<br/>
-                }<br/>
-                body {<br/>
-                font: 100% Helvetica, sans-serif;<br/>
-                background-color: #efefef;<br/>
-                }
-            </code>
+                        html,<br/>
+                        body,<br/>
+                        ul,<br/>
+                        ol {<br/>
+                        margin: 0;<br/>
+                        padding: 0;<br/>
+                        }<br/>
+                        body {<br/>
+                        font: 100% Helvetica, sans-serif;<br/>
+                        background-color: #efefef;<br/>
+                        }
+                    </code>
                 </section>
 
                 <p>Notice we're using @import 'reset'; in the base.scss file. When you import a file you don't need to include the file extension .scss. Sass is smart and will figure it out for you.</p>
@@ -170,37 +171,37 @@
                     neat and clean.</p>
                 <section>
                     <code>/* This CSS will print because %message-shared is extended. */<br/>
-                %message-shared {<br/>
-                border: 1px solid #ccc;<br/>
-                padding: 10px;<br/>
-                color: #333;<br/>
-                }<br/>
-                <br/>
-                // This CSS won't print because %equal-heights is never extended.<br/>
-                %equal-heights {<br/>
-                display: flex;<br/>
-                flex-wrap: wrap;<br/>
-                }<br/>
-                <br/>
-                .message {<br/>
-                @extend %message-shared;<br/>
-                }<br/>
-                <br/>
-                .success {<br/>
-                @extend %message-shared;<br/>
-                border-color: green;<br/>
-                }<br/>
-                <br/>
-                .error {<br/>
-                @extend %message-shared;<br/>
-                border-color: red;<br/>
-                }<br/>
-                <br/>
-                .warning {<br/>
-                @extend %message-shared;<br/>
-                border-color: yellow;<br/>
-                }
-            </code>
+                        %message-shared {<br/>
+                        border: 1px solid #ccc;<br/>
+                        padding: 10px;<br/>
+                        color: #333;<br/>
+                        }<br/>
+                        <br/>
+                        // This CSS won't print because %equal-heights is never extended.<br/>
+                        %equal-heights {<br/>
+                        display: flex;<br/>
+                        flex-wrap: wrap;<br/>
+                        }<br/>
+                        <br/>
+                        .message {<br/>
+                        @extend %message-shared;<br/>
+                        }<br/>
+                        <br/>
+                        .success {<br/>
+                        @extend %message-shared;<br/>
+                        border-color: green;<br/>
+                        }<br/>
+                        <br/>
+                        .error {<br/>
+                        @extend %message-shared;<br/>
+                        border-color: red;<br/>
+                        }<br/>
+                        <br/>
+                        .warning {<br/>
+                        @extend %message-shared;<br/>
+                        border-color: yellow;<br/>
+                        }
+                    </code>
 
                     <p>What the above code does is tells .message, .success, .error, and .warning to behave just like %message-shared. That means anywhere that %message-shared shows up, .message, .success, .error, & .warning will too. The magic happens in
                         the generated CSS, where each of these classes will get the same CSS properties as %message-shared. This helps you avoid having to write multiple class names on HTML elements.
@@ -218,37 +219,37 @@
 
                 <section>
                     <code class="before">
-                .container {<br/>
-                width: 100%;<br/>
-                }<br/>
-                <br/>
-                article[role="main"] {<br/>
-                float: left;<br/>
-                width: 600px / 960px * 100%;<br/>
-                }<br/>
-                <br/>
-                aside[role="complementary"] {<br/>
-                float: right;<br/>
-                width: 300px / 960px * 100%;<br/>
-                }
+                        .container {<br/>
+                        width: 100%;<br/>
+                        }<br/>
+                        <br/>
+                        article[role="main"] {<br/>
+                        float: left;<br/>
+                        width: 600px / 960px * 100%;<br/>
+                        }<br/>
+                        <br/>
+                        aside[role="complementary"] {<br/>
+                        float: right;<br/>
+                        width: 300px / 960px * 100%;<br/>
+                        }
 
-            </code>
+                    </code>
                     <code class="after">
-                .container {<br/>
-                width: 100%;<br/>
-                }<br/>
-                <br/>
-                article[role="main"] {<br/>
-                float: left;<br/>
-                width: 62.5%;<br/>
-                }<br/>
-                <br/>
-                aside[role="complementary"] {<br/>
-                float: right;<br/>
-                width: 31.25%;<br/>
-                }
+                        .container {<br/>
+                        width: 100%;<br/>
+                        }<br/>
+                        <br/>
+                        article[role="main"] {<br/>
+                        float: left;<br/>
+                        width: 62.5%;<br/>
+                        }<br/>
+                        <br/>
+                        aside[role="complementary"] {<br/>
+                        float: right;<br/>
+                        width: 31.25%;<br/>
+                        }
 
-            </code>
+                    </code>
                 </section>
 
                 <p>We've created a very simple fluid grid, based on 960px. Operations in Sass let us do something like take pixel values and convert them to percentages without much hassle.</p>
@@ -264,6 +265,7 @@
         <p class="warning">
             Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live
         </p>
+
         <footer>
             <h6>&copy; 2019 the entire open-source community</h6>
         </footer>
